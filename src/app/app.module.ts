@@ -9,7 +9,7 @@ import { UiComponentsModule } from './ui-components/ui-components.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
