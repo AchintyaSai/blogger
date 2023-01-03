@@ -101,7 +101,7 @@ hr {
 }
 
 .tm-nav-link {
-    color: $secondary-color;
+    color: $primary-color;
     background-color: transparent;
     height: 75px;
     width: 100%;
@@ -260,7 +260,7 @@ ul {
     color: #999;
 }
 
-.tm-post-link:hover .tm-post-title { color: $primary-color; }
+.tm-post-link:hover .tm-post-title { color: $secondary-color; }
 
 .tm-btn {
     display: inline-block;

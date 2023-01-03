@@ -1,12 +1,14 @@
 @import "../../../assets/abstract/variables.scss";
 
 .list-item {
-    background-color: $primary-color;
-    color: $secondary-color;
-
-    :hover{
     background-color: $secondary-color;
     color: $primary-color;
+
+
+
+    :hover{
+        background-color: $primary-color;
+        color: $secondary-color;
     }
 
 }
