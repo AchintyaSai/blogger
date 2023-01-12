@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonUtilsService } from 'src/app/core/service/common-utils.service';
+import { PageId } from 'src/app/shared/constants/app-constants';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private commonUtils : CommonUtilsService) { }
 
   ngOnInit(): void {
   }
@@ -18,16 +20,16 @@ export class HeaderComponent implements OnInit {
   {
     switch(screenId) {
       case 1:
-        this.router.navigateByUrl("home");
+        this.commonUtils.navigateToPage(PageId.HOME_PAGE)
         break;
       case 2:
-        this.router.navigateByUrl("single-post");
+        this.commonUtils.navigateToPage(PageId.SINGLE_POST_PAGE)
         break;
       case 3:
-        this.router.navigateByUrl("about");
+        this.commonUtils.navigateToPage(PageId.ABOUT_PAGE)
         break;
       case 4:
-        this.router.navigateByUrl("contact-us");
+        this.commonUtils.navigateToPage(PageId.CONTACT_US_PAGE)
         break
     }
   }

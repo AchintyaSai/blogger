@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonUtilsService } from 'src/app/core/service/common-utils.service';
 import { SignupService } from 'src/app/core/service/signup.service';
+import { PageId } from 'src/app/shared/constants/app-constants';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginForm : FormGroup;
 
-  constructor(private signupService : SignupService, private fb : FormBuilder) { 
+  constructor(private signupService : SignupService, private fb : FormBuilder, private commonUtils : CommonUtilsService) { 
     this.loginForm = this.fb.group({
       name: [
         '',
@@ -65,7 +67,8 @@ export class LoginComponent implements OnInit {
       "country": this.loginForm.get('country')?.value
     }
     this.signupService.postSignupDetails(bodyData).subscribe(resp => {
-      console.log(resp)
+      // console.log(resp);
+      this.commonUtils.navigateToPage(PageId.OTP_PAGE)
     }, error => {
       console.log(error);
     })
