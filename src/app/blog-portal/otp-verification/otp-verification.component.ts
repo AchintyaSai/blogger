@@ -49,6 +49,7 @@ export class OtpVerificationComponent implements OnInit {
     }
     
     this.otpService.sendOTP(otpData).subscribe(data => {
+      console.log(data)
       if(data.errorCode == "0000")
         this.commonUtils.navigateToPage(PageId.HOME_PAGE);
     }, err => {
